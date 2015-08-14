@@ -1,0 +1,1589 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>车之鸟pad端API-v2.6</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h2 id="toc_0"><strong>车之鸟pad端API-v2.6</strong></h2>
+
+<p><strong>请求域名：</strong></p>
+
+<p><code>http://115.29.8.32:8084/</code></p>
+
+<p><strong>请求方式：</strong></p>
+
+<p><code>POST</code></p>
+
+<p><strong>编码格式：</strong></p>
+
+<p><code>utf-8</code></p>
+
+<p><strong>响应信息：</strong></p>
+
+<p><code>json字符串</code></p>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>r</td>
+<td>状态码</td>
+<td>1表示成功，0及负数表示失败</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>描述</td>
+<td>出现失败时的一些相关信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>数据</td>
+<td>返回的结果消息数据，返回参数都在这个字段中</td>
+</tr>
+</tbody>
+</table>
+
+<p><code>状态码r的意义</code></p>
+
+<table>
+<thead>
+<tr>
+<th>数字</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>接口调用成功</td>
+</tr>
+<tr>
+<td>0</td>
+<td>参数错误，如某些参数未传值</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>token过期或错误</td>
+</tr>
+<tr>
+<td>-2</td>
+<td>权限不足</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>接口示例：</strong></p>
+
+<ul>
+<li><p>url<br>
+<code>http://115.29.8.32:8084/api/member/login</code></p></li>
+<li><p>POST数据</p>
+
+<pre><code>&quot;code&quot;: 60  
+&quot;username&quot;: pad_test
+&quot;password&quot;: 123456 </code></pre></li>
+<li><p>返回消息示例<br>
+<code>{&quot;r&quot;:1,&quot;msg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;id&quot;:&quot;1&quot;,&quot;token&quot;:&quot;07e630ef9cd20355ceaac09a01e90038&quot;}}</code></p></li>
+</ul>
+
+<h2 id="toc_1"><strong>推送第三方使用个推</strong></h2>
+
+<pre><code>AppID：uzSVr2HoGM6flx1JAu1PB7
+AppKey：vVo5sC6m1w7XZMYEgT7LB6
+AppSecret：AR9ixk85rn98uF973YqDz
+MasterSecret：C9Uo814P1vA4dB7kHHxY68</code></pre>
+
+<h3 id="toc_2">登录部分</h3>
+
+<h5 id="toc_3">1. 登陆</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/member/login</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;code&quot;: 门店代码,字符串  
+&quot;username&quot;: 用户名
+&quot;password&quot;: 密码   
+&quot;cid&quot;: 推送CID</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;id&quot;: 用户id
+&quot;token&quot;: 登录后的认证信息，有效期30天，某些接口需要POST这个字段
+&quot;member_name&quot;: 门店名字
+&quot;authority&quot;: 账号权限等级，职务值相加,1表示电子维修单权限2表示技师权限4表示仓库权限8表示收银权限，如值为7(1+2+4)表示此人有接待技师仓库权限</code></pre></li>
+<li><p><strong>错误码：</strong>  </p>
+
+<pre><code>-101： 不存在code对应门店  
+-102： 账号或密码错误</code></pre></li>
+</ul>
+
+<h5 id="toc_4">2. 登出</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/member/logout</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;: 登陆时返回的信息</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_5">3. 修改密码</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/member/changePassword</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;code&quot;: 门店代码,字符串  
+&quot;username&quot;: 用户名
+&quot;old_password&quot;: 原密码   
+&quot;new_password&quot;: 新密码</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-301： 原密码错误</code></pre></li>
+</ul>
+
+<h3 id="toc_6">电子维修单部分</h3>
+
+<h5 id="toc_7">4. 获取车辆信息</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getCarInfo</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_number&quot;： 车牌号</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;has_info&quot;: 1表示有此车辆信息，0表示没有，没有则不会出现下面参数
+&quot;car_id&quot;: 车辆id
+&quot;brand&quot;: 品牌
+&quot;class&quot;: 车型
+&quot;pai&quot;: 排量
+&quot;year&quot;: 年份
+&quot;vin&quot;: 车架号
+&quot;contact&quot;： 车主姓名
+&quot;tel&quot;: 手机号</code></pre></li>
+</ul>
+
+<h5 id="toc_8">5. 获取车辆品牌种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getBrand</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;keyword&quot;: 查询关键字，可空</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 品牌id
+&quot;name&quot;: 品牌名</code></pre></li>
+</ul>
+
+<h5 id="toc_9">6. 获取车辆车型种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getClass</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 品牌id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 车型id
+&quot;name&quot;: 车型名 </code></pre></li>
+</ul>
+
+<h5 id="toc_10">7. 获取车辆排量种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getPai</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 车型id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 排量id
+&quot;name&quot;: 排量</code></pre></li>
+</ul>
+
+<h5 id="toc_11">7.5. 获取车辆年款种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getYear</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;brand_id&quot;: 品牌id
+&quot;class_id&quot;: 车型id
+&quot;pai_id&quot;: 排量id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 排量id
+&quot;name&quot;: 年款</code></pre></li>
+</ul>
+
+<h5 id="toc_12">8. 添加车辆信息</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/addCarInfo</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_number&quot;： 车牌号
+&quot;brand_id&quot;: 品牌id
+&quot;class_id&quot;: 车型id
+&quot;pai_id&quot;： 车辆排量种类id
+&quot;year_id&quot;: 车年款id
+&quot;vin&quot;: 车架号
+&quot;contact&quot;： 车主姓名
+&quot;tel&quot;: 手机号</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;car_id&quot;: 新增车辆id</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-801： 车牌号信息已存在
+-802： 不存在此排量id</code></pre></li>
+</ul>
+
+<h5 id="toc_13">9. 获取技师列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getTechList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;tech_id&quot;: 技师id
+&quot;name&quot;: 技师姓名</code></pre></li>
+</ul>
+
+<h5 id="toc_14">10. 获取门店配件列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong>
+<code>/api/electrical/getComponentList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;component_id&quot;: 配件id
+&quot;sub_code&quot;: 配件子编码
+&quot;name&quot;: 配件名称
+&quot;brand&quot;: 配件品牌
+&quot;model&quot;: 型号
+&quot;car_class&quot;: 车型备注
+&quot;ome&quot;: ome代码
+&quot;unit&quot;: 单位</code></pre></li>
+</ul>
+
+<h5 id="toc_15">11. 获取门店美容油漆类项目列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getMeirongProjectList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;project_id&quot;: 项目id
+&quot;name&quot;: 项目名称
+&quot;price&quot;: 参考价格</code></pre></li>
+</ul>
+
+<h5 id="toc_16">12. 添加门店美容油漆类项目</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/addMeirongProject</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;name&quot;: 项目名称
+&quot;price&quot;: 参考价格</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_17">13. 删除门店美容油漆类项目</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/delMeirongProject</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;project_id&quot;: 项目id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_18">14. 创建电子维修单</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/addRecord</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_id&quot;: 车辆id
+&quot;km&quot;: 进店公里数，最多保留两位小数
+&quot;car_state&quot;: 车辆进店状态，json字符串，pad端自己定义格式
+&quot;hope_time&quot;： 期望完成时间，时间戳形式
+&quot;customer_confirm&quot;: 客户确认方式，1表示微信确认，2表示门店确认
+&quot;is_has_1&quot;: 是否有保养项目，1表示有，0表示没有，同理，is_has_2表示是否有机修项目，is_has_3表示是否有轮胎项目，is_has_4表示是否有油漆项目，is_has_5表示是否有美容项目
+&quot;component_num_1&quot;: 当is_has_1为1时才需要，表示保养项目配件数量，必须为正数，同理，component_num_2和component_num_3也是
+&quot;component_1_1_id&quot;: 保养项目下第一个配件的id，component_1_2_id表示第二个配件，数目要与component_num_1对应，同理，component_2_1_id表示机修项目的第一个配件的id
+&quot;component_1_1_num&quot;: 保养项目下第一个配件的数量
+&quot;component_1_1_price&quot;: 保养项目下第一个配件的单价
+&quot;component_1_1_hour_charge&quot;: 保养项目下第一个配件的工时费
+&quot;project_num_4&quot;: 当is_has_4为1时才需要，表示油漆项目数量，必须为正数，同理，project_num_5表示美容项目数量
+&quot;project_4_1_id&quot;: 油漆项目下第一个项目的id
+&quot;project_4_1_hour_charge&quot;: 油漆项目下第一个项目的工时费
+&quot;tech_num_1&quot;: 保养项目的施工人数，同理，tech_num_2是机修项目施工人数。。。
+&quot;tech_1_1_id&quot;: 保养项目下第一个施工人员的id，tech_1_2_id表示第二个施工人员id，tech_2_1_id表示机修项目下第一个施工人员id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_19">15. 创建我只洗车单</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/onlyWash</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_num&quot;: 车牌号
+&quot;money&quot;: 价格
+&quot;tech_num&quot;: 选择的技工人数
+&quot;tech_id_1&quot;: 第一个施工人员的id，tech_id_2表示第二个施工人员id。。。。。</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_20">16. 获取电子维修单列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_num&quot;: 查询车牌，可空
+&quot;order_status&quot;: 订单状态,1待出库2已出库3维修中4待支付5已支付6已完成,可空,多个状态选择之间用,间隔，如&quot;1,3,5&quot;
+&quot;create_time_start&quot;: 下单时间筛选，开始时间，时间戳格式，可空
+&quot;create_time_end&quot;: 下单时间筛选，结束时间，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;car_num&quot;: 车牌号
+&quot;order_status&quot;: 订单状态
+&quot;create_time&quot;: 下单时间，时间戳格式
+&quot;money&quot;: 订单金额
+&quot;finish_time&quot;: 完工时间，时间戳格式，还没完成则为0
+&quot;is_only_wash&quot;: 是否为洗车单，1表示是0表示不是</code></pre></li>
+</ul>
+
+<h5 id="toc_21">17. 获取电子维修单详情</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getDetail</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;electrical_id&quot;: 订单id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;order_id&quot;: 订单号
+&quot;car_num&quot;: 车牌号
+&quot;order_status&quot;: 订单状态
+&quot;create_time&quot;: 下单时间，时间戳格式
+&quot;is_only_wash&quot;: 是否为洗车单，1表示是0表示不是
+&quot;money&quot;: 订单金额
+&quot;finish_time&quot;: 完工时间，时间戳格式，还没完成则为0
+&quot;car_class&quot;: 车型信息
+&quot;receptionist&quot;: 接待人员
+&quot;km&quot;: 进店公里数
+&quot;car_state&quot;: 车辆状态
+&quot;techs&quot;(多组): 施工人员，多个人员之间用逗号分割
+  &quot;name&quot;: 名字
+&quot;component&quot;(多组): 配件项目
+  &quot;name&quot;: 名称
+  &quot;number&quot;: 数量
+  &quot;price&quot;: 单价
+  &quot;hour_charge&quot;: 工时费
+  &quot;order_status&quot;: 配件项目状态，0未开始1维修中2维修完成
+&quot;project&quot;(多组): 油漆美容项目
+  &quot;name&quot;: 名称
+  &quot;hour_charge&quot;: 工时费
+  &quot;order_status&quot;: 该项目状态，0未开始1维修中2维修完成</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-1701： 不存在对应订单</code></pre></li>
+</ul>
+
+<h5 id="toc_22">18. 获取车辆的历史电子维修单列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getCarHistory</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_num&quot;: 查询车牌
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;order_status&quot;: 订单状态
+&quot;create_time&quot;: 下单时间，时间戳格式
+&quot;money&quot;: 订单金额
+&quot;finish_time&quot;: 完工时间，时间戳格式，还没完成则为0</code></pre></li>
+</ul>
+
+<h5 id="toc_23">19. 绑定CID</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/member/bindCID</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;: 登陆时返回的信息
+&quot;cid&quot;: 推送CID</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_24">20. 获取技师维修单列表(待维修和维修中)</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/tech/getList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;order_status&quot;: 0未开始1维修中
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;hope_time&quot;: 预计完成时间，时间戳格式
+&quot;car_num&quot;: 车牌号
+&quot;car_class&quot;: 车型
+&quot;component&quot;(多组): 配件项目 
+    &quot;id&quot;: 配件id
+    &quot;type&quot;: 类型，1表示保养2机修3轮胎4油漆5美容
+    &quot;name&quot;: 名称
+    &quot;order_status&quot;: 配件项目状态，0未开始1维修中2维修完成，在待维修列表中如果是1或者2则不能点击开始，其他同理
+&quot;project&quot;(多组): 油漆美容项目 
+    &quot;id&quot;: 项目id
+    &quot;type&quot;: 类型，1表示保养2机修3轮胎4油漆5美容
+    &quot;name&quot;: 名称
+    &quot;order_status&quot;: 该项目状态，0未开始1维修中2维修完成</code></pre></li>
+</ul>
+
+<h5 id="toc_25">21. 技师开始维修项目</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/tech/start</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;project_id&quot;: 配件或项目id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-2101： 该技师下面没有这个project_id
+-2102： 这个项目状态不是未开始</code></pre></li>
+</ul>
+
+<h5 id="toc_26">22. 技师完成维修项目</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/tech/finish</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;project_id&quot;: 配件或项目id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-2201： 该技师下面没有这个project_id
+-2202： 这个项目状态不是维修中</code></pre></li>
+</ul>
+
+<h5 id="toc_27">23. 获取技师维修完成列表(维修完成)</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/tech/getEndList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;finish_time&quot;: 完工时间，时间戳格式
+&quot;car_num&quot;: 车牌号
+&quot;car_class&quot;: 车型
+&quot;money&quot;: 金额
+&quot;component&quot;(多组): 配件项目
+  &quot;id&quot;: 项目id
+  &quot;name&quot;: 名称
+  &quot;type&quot;: 项目类型，1表示保养2机修3轮胎4油漆5美容
+  &quot;techs&quot;(多组): 施工人员，多个人员之间用逗号分割
+    &quot;name&quot;: 名字
+&quot;project&quot;(多组): 油漆美容项目
+  &quot;id&quot;: 项目id
+  &quot;name&quot;: 名称
+  &quot;type&quot;: 项目类型，1表示保养2机修3轮胎4油漆5美容
+  &quot;techs&quot;(多组): 施工人员，多个人员之间用逗号分割
+    &quot;name&quot;: 名字</code></pre></li>
+</ul>
+
+<h5 id="toc_28">24. 获取维修单评价详情</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/tech/getCommentDetail</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;: 登陆时返回的信息
+&quot;electrical_id&quot;: 评价id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;order_id&quot;: 订单号
+&quot;car_number&quot;: 车牌号
+&quot;finish_time&quot;: 维修单完成时间
+&quot;member_score&quot;: 门店评分，为类似&quot;4,5,4,2,1&quot;这样字符串，逗号分割分数，门店评分有5个 
+&quot;server_score&quot;: 服务评分，为类似&quot;4,5,4,2&quot;这样字符串，逗号分割分数，服务评分有4个 
+&quot;desc&quot;: 评价内容 
+&quot;create_time&quot;: 评价时间时间戳 
+&quot;component&quot;(多组): 配件项目
+  &quot;name&quot;: 名称
+  &quot;type&quot;: 项目类型，1表示保养2机修3轮胎4油漆5美容
+&quot;project&quot;(多组): 油漆美容项目
+  &quot;name&quot;: 名称
+  &quot;type&quot;: 项目类型，1表示保养2机修3轮胎4油漆5美容</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-2401： 客户未评价</code></pre></li>
+</ul>
+
+<h5 id="toc_29">25. 获取仓库未出库列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getNotOutList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;car_class&quot;: 车型
+&quot;create_time&quot;: 下单时间，时间戳格式
+&quot;vin&quot;: 车架号
+&quot;techs&quot;(多组): 技师
+  &quot;name&quot;: 名字
+&quot;component&quot;(多组): 配件信息
+  &quot;component_id&quot;: 配件id
+  &quot;sub_code&quot;: 配件子编码
+  &quot;name&quot;: 配件名称
+  &quot;brand&quot;: 配件品牌
+  &quot;model&quot;: 型号
+  &quot;number&quot;: 数量</code></pre></li>
+</ul>
+
+<h5 id="toc_30">26. 出库</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/out</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;electrical_id&quot;: 订单id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-2601： 这个订单不是待出库状态
+-2602： 库存配件不足</code></pre></li>
+</ul>
+
+<h5 id="toc_31">27. 获取仓库已出库列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getAlreadyOutList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;out_worker_name&quot;: 操作人
+&quot;component&quot;(多组): 配件信息
+  &quot;component_id&quot;: 配件id
+  &quot;sub_code&quot;: 配件子编码
+  &quot;name&quot;: 配件名称
+  &quot;brand&quot;: 配件品牌
+  &quot;model&quot;: 型号
+  &quot;number&quot;: 数量
+  &quot;money&quot;: 出库金额</code></pre></li>
+</ul>
+
+<h5 id="toc_32">28. 新增供应商</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/addSupplier</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;name&quot;: 供应商名称
+&quot;contact&quot;: 联系人
+&quot;phone&quot;: 联系电话</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_33">29. 获取供应商列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getSupplierList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;supplier_id&quot;: 供应商id
+&quot;code&quot;: 供应商编码
+&quot;name&quot;: 供应商名称
+&quot;contact&quot;: 联系人
+&quot;phone&quot;: 联系电话</code></pre></li>
+</ul>
+
+<h5 id="toc_34">30. 删除供应商</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/delSupplier</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;supplier_id&quot;: 供应商id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_35">31. 获取配件列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getComponentList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;component_id&quot;: 配件id
+&quot;sub_code&quot;: 配件子编码
+&quot;name&quot;: 配件名称
+&quot;brand&quot;: 配件品牌
+&quot;model&quot;: 型号
+&quot;car_class&quot;: 车型备注
+&quot;ome&quot;: ome代码
+&quot;unit&quot;: 单位</code></pre></li>
+</ul>
+
+<h5 id="toc_36">32. 新增入库(供应商可以有多个)</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/addWarehouseIn</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;num&quot;： 入库的配件种类数量,大于等于1的整数
+&quot;supplier_id_1&quot;: 第一个配件种类供应商id,同理第二个为supplier_id_2
+&quot;component_id_1&quot;: 第一个配件id
+&quot;price_1&quot;: 第一个配件的入库单价
+&quot;number_1&quot;: 第一个配件的数量</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_37">33. 获取入库单列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getWarehouseInList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;warehouse_in_id&quot;: 入库单id
+&quot;order_id&quot;: 入库单号
+&quot;worker&quot;: 入库人员
+&quot;number&quot;: 入库数量
+&quot;money&quot;: 入库金额</code></pre></li>
+</ul>
+
+<h5 id="toc_38">34. 获取入库单详情</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getWarehouseInDetail</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;: 登陆时返回的信息
+&quot;warehouse_in_id&quot;: 入库单id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;order_id&quot;: 入库单号
+&quot;money&quot;: 入库金额
+&quot;component&quot;(多组): 配件项目
+  &quot;supplier_name&quot;: 供应商名字
+  &quot;sub_code&quot;: 配件子编码
+  &quot;name&quot;: 配件名称
+  &quot;car_class&quot;: 车型备注
+  &quot;unit&quot;: 单位
+  &quot;price&quot;: 入库单价
+  &quot;number&quot;: 入库数量</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-3401： 本门店下不存在这个入库单号</code></pre></li>
+</ul>
+
+<h5 id="toc_39">35. 库存查询</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getStockList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;start_num&quot;: 库存数量区间开始数量，可空
+&quot;end_num&quot;: 库存数量区间结束数量，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;component_id&quot;: 配件id
+&quot;code&quot;: 配件编码
+&quot;sub_code&quot;: 配件子编码
+&quot;name&quot;: 配件名称
+&quot;number&quot;: 库存数量
+&quot;total_price&quot;: 总价(均价由总价除于数量得出)
+&quot;unit&quot;: 单位</code></pre></li>
+</ul>
+
+<h5 id="toc_40">36. 获取父配件列表(在新增配件里的那个选择配件按钮)</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/getParentComponentList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;keyword&quot;: 查询关键字，可空
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;parent_component_id&quot;: 父配件id
+&quot;name&quot;: 配件名称
+&quot;category&quot;: 配件类别
+&quot;code&quot;: 配件编码</code></pre></li>
+</ul>
+
+<h5 id="toc_41">37. 新增配件</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/addComponent</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;parent_component_id&quot;: 父配件id
+&quot;brand&quot;: 配件品牌
+&quot;model&quot;: 型号
+&quot;car_class&quot;: 车型备注
+&quot;ome&quot;: ome代码
+&quot;unit&quot;: 单位</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-3701： 不存在parent_component_id对应记录</code></pre></li>
+</ul>
+
+<h5 id="toc_42">38. 删除配件</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/warehouse/delComponent</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;component_id&quot;: 配件id</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_43">39. 获取待支付列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/pay/getNotPayList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;car_number&quot;: 车牌号
+&quot;receptionist&quot;: 接待人员
+&quot;money&quot;: 金额
+&quot;is_only_wash&quot;： 是否为洗车单，0不是1是
+&quot;component&quot;(多组): 配件信息
+    &quot;id&quot;: 配件id
+    &quot;name&quot;: 配件名称
+    &quot;type&quot;: 项目类型，1表示保养2机修3轮胎4油漆5美容
+    &quot;number&quot;: 数量
+    &quot;price&quot;: 单价
+    &quot;hour_charge&quot;: 工时费
+    &quot;techs&quot;(多组): 施工人员
+        &quot;name&quot;: 名字
+&quot;project&quot;(多组): 油漆美容项目
+    &quot;id&quot;: 项目id
+    &quot;name&quot;: 名称
+    &quot;type&quot;: 项目类型，1表示保养2机修3轮胎4油漆5美容
+    &quot;hour_charge&quot;: 工时费
+    &quot;techs&quot;(多组): 施工人员，多个人员之间用逗号分割
+        &quot;name&quot;: 名字
+&quot;wash&quot;: 洗车单技师名字
+    &quot;techs&quot;(多组): 施工人员，多个人员之间用逗号分割
+        &quot;name&quot;: 名字</code></pre></li>
+</ul>
+
+<h5 id="toc_44">40. 获取会员卡余额</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/pay/getVipBalance</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;number&quot;: 会员卡号，如123456789</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>&quot;balance&quot;: 账号余额</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-4001： 不存在这个卡号
+-4002： 这个会员卡无效</code></pre></li>
+</ul>
+
+<h5 id="toc_45">41. 结算付款</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/pay/pay</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;pay_way&quot;: 支付方式，1扫码支付2现金3银行卡4会员卡5会员卡+现金 6会员卡+银行卡
+&quot;electrical_id&quot;: 订单id
+&quot;actual_money&quot;: 实收金额
+&quot;discount_money&quot;： 优惠金额
+&quot;vip_number&quot;: 会员卡号，如果支付方式为4,5,6才需要填写,会员卡余额为0不能使用4,5,6</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+<li><p><strong>错误码：</strong></p>
+
+<pre><code>-4101: 不存在这个卡号
+-4102: 这个会员卡无效
+-4103: 会员卡余额为0
+-4104: 会员卡余额足够完成支付，当选5,6支付方式时，出现余额充足情况会报错
+-4105: 本门店下不能在待支付的这个订单id</code></pre></li>
+</ul>
+
+<h5 id="toc_46">42. 获取已支付列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/pay/getAlreadyPayList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20
+&quot;order_id&quot;: 订单号筛选条件，可空
+&quot;car_number&quot;: 车牌号筛选条件，可空
+&quot;start_time&quot;: 开始时间
+&quot;end_time&quot;: 结束时间
+&quot;way_1&quot;: 值为1，在支付方式中扫码支付打钩时，填写这个参数，值为1，其他情况不用传
+&quot;way_2&quot;: 值为1，在支付方式中现金支付打钩时，填写这个参数，值为1，其他情况不用传
+&quot;way_3&quot;: 值为1，在支付方式中银行卡支付打钩时，填写这个参数，值为1，其他情况不用传
+&quot;way_4&quot;: 值为1，在支付方式中会员卡支付打钩时，填写这个参数，值为1，其他情况不用传
+&quot;way_5&quot;: 值为1，在支付方式中混合支付打钩时，填写这个参数，值为1，其他情况不用传</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;electrical_id&quot;: 订单id
+&quot;order_id&quot;: 订单号
+&quot;car_number&quot;: 车牌号
+&quot;money&quot;: 应收金额
+&quot;actual_money&quot;: 实收金额
+&quot;discount_money&quot;： 优惠金额
+&quot;pay_way&quot;: 支付方式，1扫码支付2现金3银行卡4会员卡5会员卡+现金 6会员卡+银行卡
+&quot;cashier&quot;: 操作员
+&quot;cash_time&quot;: 支付时间</code></pre></li>
+</ul>
+
+<h5 id="toc_47">43. 获取比价记录</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/electrical/getBaojiaHistory</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;： 登陆时返回的信息
+&quot;car_number&quot;: 车牌号，如 浙JSD867
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;baojia_id&quot;: 比价id
+&quot;create_time&quot;: 时间
+&quot;project&quot;：(以下多组)
+&quot;p_name&quot;: 品名
+&quot;model&quot;: 型号
+&quot;price&quot;： 价格
+&quot;quality&quot;: 质保期，如3年2月</code></pre></li>
+</ul>
+
+<h3 id="toc_48">增加的比价模块</h3>
+
+<p><strong>请求域名：</strong></p>
+
+<p><code>http://203.195.202.184:1030/</code></p>
+
+<h3 id="toc_49">注意，下面的接口都用新的域名请求</h3>
+
+<h5 id="toc_50">1. 获取车辆品牌种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getBrand</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;keyword&quot;: 查询关键字，可空</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 品牌id
+&quot;name&quot;: 品牌名</code></pre></li>
+</ul>
+
+<h5 id="toc_51">2. 获取车辆车型种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getClass</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 品牌id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 车型id
+&quot;name&quot;: 车型名 </code></pre></li>
+</ul>
+
+<h5 id="toc_52">3. 获取车辆排量种类</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/carClass/getPai</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 车型id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 排量id
+&quot;name&quot;: 排量</code></pre></li>
+</ul>
+
+<h5 id="toc_53">4. 上传门店比价</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/upload</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;: 登陆时返回的信息
+&quot;car_number&quot;: 车牌号
+&quot;car_class&quot;: 车型(这里传的车型就是类似“奥迪A4 2011 2.0L”这样的字符串)
+&quot;is_vin_image&quot;: 0表示传的是字符串，1表示传的是图片
+&quot;vin&quot;: 车架号，is_vin_image为0时上传
+&quot;vin_image&quot;: 车架图片，is_vin_image为1时上传
+&quot;project_num&quot;: 比价项目数量
+&quot;project_name_number&quot;: 比价项目名字，number填具体数字，从1开始至比价项目数量，如project_name1
+&quot;project_image_number&quot;: 比价项目图片，没有图片不传，一个项目只能没图片或者1张图片
+图片都要小于2M</code></pre></li>
+<li><p><strong>返回参数：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h3 id="toc_54">查询留言拿货部分</h3>
+
+<h5 id="toc_55">5. 获取我的比价列表</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/getList</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;member_id&quot;: 门店id
+&quot;car_class&quot;： 车型(可选)
+&quot;project_name&quot;: 项目名称(可选)
+&quot;start_time&quot;: 起始比价时间条件(可选)
+&quot;end_time&quot;: 结束比价时间条件(可选)
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;id&quot;: 比价id
+&quot;car_class&quot;: 车型
+&quot;status&quot;: 状态，0未回复1已回复
+&quot;create_time&quot;: 创建时间
+&quot;new_reply&quot;: 新回复数量，0没有1表示新回复1条，2表示2条。。。
+&quot;project&quot;：(以下多组)
+    &quot;project_id&quot;: 项目id
+    &quot;name&quot;： 项目名
+    &quot;price&quot;： 价格
+    &quot;is_nahuo&quot;: 是否拿过货，0没拿过1拿过</code></pre></li>
+</ul>
+
+<h5 id="toc_56">6. 查看详情</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/getDetail</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 比价id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;project_id&quot;: 项目id
+&quot;name&quot;： 项目名
+&quot;p_name&quot;: 品名
+&quot;model&quot;: 型号
+&quot;price&quot;： 价格
+&quot;quality&quot;: 质保期，如3年2月
+&quot;is_nahuo&quot;: 是否拿过货，0没拿过1拿过
+&quot;desc&quot;: 备注</code></pre></li>
+</ul>
+
+<h5 id="toc_57">7. 查看留言</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/getReply</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 比价id
+&quot;page&quot;: 页数，可选参数，不填默认为0
+&quot;per_page&quot;： 每页记录数，可选参数，不选默认为20</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;type&quot;: 0表示本门店回复1表示后台回复
+&quot;create_time&quot;: 回复时间
+&quot;content&quot;： 内容
+&quot;image&quot;: 图片，为空表示没有</code></pre></li>
+</ul>
+
+<h5 id="toc_58">8. 发表留言</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/reply</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;id&quot;: 比价id
+&quot;token&quot;: 登陆时返回的信息
+&quot;content&quot;: 内容
+&quot;image&quot;: 图片，可选参数</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_59">9. 拿货</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/nahuo</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;token&quot;: 登陆时返回的信息
+&quot;project_id&quot;: 项目id</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>无，通过r判断是否成功</code></pre></li>
+</ul>
+
+<h5 id="toc_60">10. 关键字查询(这个接口暂时没用)</h5>
+
+<ul>
+<li><p><strong>uri：</strong><br>
+<code>/api/baojia/keyword</code></p></li>
+<li><p><strong>POST数据：</strong></p>
+
+<pre><code>&quot;keyword&quot;: 关键字部分内容，可为空，空则返回全部关键字</code></pre></li>
+<li><p><strong>返回参数(多组)：</strong></p>
+
+<pre><code>&quot;keyword&quot;：关键字</code></pre></li>
+</ul>
+
+<h3 id="toc_61">推送</h3>
+
+<h5 id="toc_62">1. 仓库有新的订单要出库</h5>
+
+<ul>
+<li><p><strong>推送参数：</strong></p>
+
+<pre><code>json字符串
+&quot;name&quot;: newout
+&quot;id&quot;: 订单id</code></pre></li>
+</ul>
+
+<h5 id="toc_63">2. 维修技师有新的订单要维修</h5>
+
+<ul>
+<li><p><strong>推送参数：</strong></p>
+
+<pre><code>json字符串
+&quot;name&quot;: newtech
+&quot;id&quot;: 订单id</code></pre></li>
+</ul>
+
+<h5 id="toc_64">3. 收银有新的待支付订单</h5>
+
+<ul>
+<li><p><strong>推送参数：</strong></p>
+
+<pre><code>json字符串
+&quot;name&quot;: newpay
+&quot;id&quot;: 订单id</code></pre></li>
+</ul>
+
+<h5 id="toc_65">4. 门店比价回复</h5>
+
+<ul>
+<li><p><strong>推送参数：</strong></p>
+
+<pre><code>json字符串
+&quot;name&quot;: baojia
+&quot;id&quot;: 比价id
+&quot;member_id&quot;: 门店id</code></pre></li>
+</ul>
+
+<h5 id="toc_66">5. 门店比价评论回复</h5>
+
+<ul>
+<li><p><strong>推送参数：</strong></p>
+
+<pre><code>json字符串
+&quot;name&quot;: baojia_reply
+&quot;id&quot;: 比价id
+&quot;member_id&quot;: 门店id</code></pre></li>
+</ul>
+
+
+</body>
+
+</html>
